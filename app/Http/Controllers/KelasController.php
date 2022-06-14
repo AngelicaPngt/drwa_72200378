@@ -90,7 +90,7 @@ class KelasController extends Controller{
     }
 
     public function updateDataKelas(request $request){
-        DB::table('kelas')->where('id', $request->input('id'))->update([
+        DB::table('kelas')->where('id_kelas', $request->input('id_kelas'))->update([
             'kelas' => $request->input('kelas'),
             'jurusan' => $request->input('jurusan'),
             'sub' => $request->input('sub')
@@ -107,7 +107,7 @@ class KelasController extends Controller{
     }
 
     public function deleteDataKelas(request $request){
-        DB::table('kelas')->where('id', $request->input('id'))->delete();
+        DB::table('kelas')->where('id_kelas', $request->input('id_kelas'))->delete();
         return response()->json(
             ["Result"=>
                 [
