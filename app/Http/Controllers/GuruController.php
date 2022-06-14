@@ -91,7 +91,7 @@ class GuruController extends Controller{
     }
 
     public function updateDataGuru(request $request){
-        DB::table('guru')->where('id', $request->input('id'))->update([
+        DB::table('guru')->where('id_guru', $request->input('id_guru'))->update([
             'rfid' => $request->input('rfid'),
             'nip' => $request->input('nip'),
             'nama_guru' => $request->input('nama_guru'),
@@ -109,7 +109,7 @@ class GuruController extends Controller{
     }
 
     public function deleteDataGuru(request $request){
-        DB::table('guru')->where('id', $request->input('id'))->delete();
+        DB::table('guru')->where('id_guru', $request->input('id_guru'))->delete();
         return response()->json(
             ["Result"=>
                 [
